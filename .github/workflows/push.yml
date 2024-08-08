@@ -21,17 +21,17 @@ jobs:
             npm-deps-${{ hashFiles('package-lock.json') }}
       - name: Lint
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npm run lint
       - name: Test
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npm run test
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npm run build
           npm run release
