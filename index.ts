@@ -1,7 +1,7 @@
 export function helloNpm(): string {
-  return 'hello NPM';
+  return 'hello NPM 2';
 }
 
 export function anotherFunc(): string {
-  return 'Another';
+  return 'Another 2';
 }
