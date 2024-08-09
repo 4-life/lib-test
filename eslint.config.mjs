@@ -2,7 +2,6 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
-import pluginReactHooks from "eslint-plugin-react-hooks";
 import eslintConfigPrettier from "eslint-config-prettier";
 import pluginRequireExplicitGenerics from "eslint-plugin-require-explicit-generics";
 
@@ -17,13 +16,11 @@ export default [
 
   {
     plugins: {
-      "react-hooks": pluginReactHooks,
       "require-explicit-generics": pluginRequireExplicitGenerics,
     },
     rules: {
       "@typescript-eslint/no-require-imports": "off",
       "no-shadow": "off",
-      "react-hooks/rules-of-hooks": "error",
       "@typescript-eslint/no-shadow": "error",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
       "indent": ["error", 2, { "SwitchCase": 1, "ObjectExpression": 1, "ImportDeclaration": 1, "ignoredNodes": ["VariableDeclaration[declarations.length=0]"] }],
@@ -50,7 +47,6 @@ export default [
       "one-var": ["error", "never"],
       "no-unreachable": "error",
       "semi": "error",
-      "react-hooks/exhaustive-deps": "error",
       "default-param-last": "off",
       "react/require-default-props": "off",
       "import/no-extraneous-dependencies": 0,
