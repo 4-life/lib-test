@@ -7,7 +7,8 @@
     "build": "tsc",
     "release": "auto shipit --base-branch=main",
     "test": "ts-mocha -p ./tsconfig.json ./*.spec.ts",
-    "lint": "eslint -c ./eslint.config.mjs \"./**/*.{ts,tsx}\""
+    "lint": "eslint -c ./eslint.config.mjs \"./**/*.{ts,tsx}\"",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
