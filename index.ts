@@ -1,5 +1,3 @@
-function helloNpm(): string {
+export function helloNpm(): string {
   return 'hello NPM';
 }
-
-module.exports = helloNpm;
