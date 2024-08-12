@@ -1,12 +1,9 @@
-/* eslint-disable react/display-name */
 import React, { ComponentType, FC, useEffect, useState } from 'react';
 import { IDBPDatabase, openDB } from 'idb';
 import { FoundDictionaryDTO, FoundDictionaryItemDTO } from './models/index.js';
 import { StoredData } from './types.js';
 
 const apiEndpoint = `${process.env.REACT_APP_API_URL}/api/v1`;
-
-const getToken = (): string => localStorage.getItem(process.env.REACT_APP_TOKEN_NAME || '') || '';
 
 export interface WithDictionaryDataProps {
   dictionary?: StoredData;
@@ -26,6 +23,7 @@ const initDB = async (): Promise<IDBPDatabase<unknown>> => {
 };
 
 const fetchDictionaryKeys = async (): Promise<FoundDictionaryDTO[]> => {
+  const getToken = (): string => localStorage.getItem(process.env.REACT_APP_TOKEN_NAME || '') || '';
   const response = await fetch(`${apiEndpoint}/dictionary/search`, {
     headers: {
       Autorization: `Bearer ${getToken()}`
@@ -95,7 +93,7 @@ const withDictionary = <P extends WithDictionaryDataProps>(
   Component: ComponentType<P>,
   keys: string[],
 ): FC<Omit<P, 'data'>> => {
-  return (props) => {
+  const componentWithDictionary = (props): React.JSX.Element => {
     const [data, setData] = useState<StoredData | undefined>(undefined);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<Error | null>(null);
@@ -130,6 +128,8 @@ const withDictionary = <P extends WithDictionaryDataProps>(
       />
     );
   };
+
+  return componentWithDictionary;
 };
 
 export default withDictionary;
