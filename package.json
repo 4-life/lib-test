@@ -1,6 +1,6 @@
 {
   "name": "@4life/lib-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My lib test",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
