@@ -6,9 +6,9 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.json",
     "release": "auto shipit --base-branch=main",
-    "test": "ts-mocha -p ./tsconfig.json ./*.spec.ts",
+    "test": "ts-mocha -n loader=ts-node/esm -p ./tsconfig.json ./*.spec.ts",
     "lint": "eslint -c ./eslint.config.mjs \"./**/*.{ts,tsx}\"",
     "prepare": "npm run build"
   },
@@ -24,18 +24,25 @@
   "homepage": "https://github.com/4-life/lib-test#readme",
   "dependencies": {
     "@eslint/js": "^9.8.0",
-    "@types/expect": "^24.3.0",
-    "@types/mocha": "^10.0.7",
-    "@types/node": "^22.1.0",
     "auto": "^11.2.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-require-explicit-generics": "^1.0.0",
     "globals": "^15.9.0",
+    "idb": "^8.0.0",
     "mocha": "^10.7.0",
-    "ts-mocha": "^10.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^22.1.0",
+    "@types/react": "^18.2.60",
+    "@types/react-dom": "^18.2.19",
+    "ts-mocha": "^10.0.0"
   }
 }
