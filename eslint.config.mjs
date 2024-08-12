@@ -8,7 +8,7 @@ import pluginRequireExplicitGenerics from 'eslint-plugin-require-explicit-generi
 
 export default [
   { files: ['**/*.{ts,tsx}'] },
-  { ignores: ['mocks'] },
+  { ignores: ['mocks', 'dist'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
