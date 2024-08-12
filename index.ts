@@ -77,4 +77,4 @@ export const getRecordsSequenceByPath = (
   return records;
 };
 
-export * from './withDictionary.js';
+export { default as withDictionary } from './withDictionary.js';
