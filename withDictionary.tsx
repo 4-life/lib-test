@@ -93,7 +93,8 @@ const withDictionary = <P extends WithDictionaryDataProps>(
   Component: ComponentType<P>,
   keys: string[],
 ): FC<Omit<P, 'data'>> => {
-  const componentWithDictionary = (props): React.JSX.Element => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const componentWithDictionary = (props: any): React.JSX.Element => {
     const [data, setData] = useState<StoredData | undefined>(undefined);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<Error | null>(null);

@@ -1,4 +1,4 @@
-import { FoundDictionaryItemDTO } from './models/index';
+import { FoundDictionaryItemDTO } from './models/index.js';
 
 const recurse = (dictionary: FoundDictionaryItemDTO[] = [], path: string, key: string): FoundDictionaryItemDTO | undefined => {
   for (const item of dictionary) {
@@ -76,3 +76,5 @@ export const getRecordsSequenceByPath = (
 
   return records;
 };
+
+export * from './withDictionary.js';

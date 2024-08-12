@@ -14,7 +14,7 @@
 
 import {
     TextContentDTO,
-} from './TextContentDTO';
+} from './TextContentDTO.js';
 
 /**
  * Response with information about the dictionary

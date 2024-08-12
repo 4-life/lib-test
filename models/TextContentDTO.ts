@@ -14,7 +14,7 @@
 
 import {
     TranslatedTextContentDTO,
-} from './TranslatedTextContentDTO';
+} from './TranslatedTextContentDTO.js';
 
 /**
  * An object representing a text content
